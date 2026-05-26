@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | Vivek</title>
+    <style>
+      :root {
+        --accent: #4A8C5E;
+        --bg: #F5F0E8;
+        --card: #FFFDF7;
+        --border: #D4C9B5;
+        --text: #1A1814;
+        --text-muted: #6B6459;
+        --gold: #FCDC00;
+        --redstone: #F54040;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1A1814;
+          --card: #2D2A24;
+          --border: #4A453A;
+          --text: #F5F0E8;
+          --text-muted: #9A9080;
+        }
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 4px solid var(--border);
+        box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+        padding: 3rem 2.5rem;
+        text-align: center;
+        max-width: 480px;
+        width: 100%;
+      }
+
+      .pixel {
+        font-family: 'Press Start 2P', 'Courier New', monospace;
+        image-rendering: pixelated;
+      }
+
+      .error-code {
+        font-family: 'Press Start 2P', 'Courier New', monospace;
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        color: var(--accent);
+        line-height: 1;
+        text-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+        margin-bottom: 0.75rem;
+      }
+
+      .subtitle {
+        font-family: 'Press Start 2P', 'Courier New', monospace;
+        font-size: 0.6rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+
+      .message {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: var(--accent);
+        color: white;
+        font-family: 'Press Start 2P', 'Courier New', monospace;
+        font-size: 0.6rem;
+        text-decoration: none;
+        border: 4px solid var(--accent);
+        border-bottom-width: 8px;
+        border-right-width: 8px;
+        transition: transform 0.1s, border-width 0.1s;
+      }
+
+      .btn:hover {
+        transform: translateY(2px);
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+      }
+
+      .pixel-art {
+        margin: 0 auto 2rem;
+        display: grid;
+        grid-template-columns: repeat(8, 12px);
+        grid-template-rows: repeat(8, 12px);
+        gap: 1px;
+        width: fit-content;
+      }
+
+      .p { display: block; width: 12px; height: 12px; }
+      .c { background: var(--accent); }
+      .r { background: var(--redstone); }
+      .g { background: var(--gold); }
+      .t { background: transparent; }
+      .d { background: var(--border); }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="card" role="main">
+      <!-- Pixel creeper face art -->
+      <div class="pixel-art" aria-hidden="true">
+        <span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span>
+        <span class="p d"></span><span class="p c"></span><span class="p c"></span><span class="p d"></span><span class="p d"></span><span class="p c"></span><span class="p c"></span><span class="p d"></span>
+        <span class="p d"></span><span class="p c"></span><span class="p t"></span><span class="p c"></span><span class="p c"></span><span class="p t"></span><span class="p c"></span><span class="p d"></span>
+        <span class="p d"></span><span class="p c"></span><span class="p c"></span><span class="p d"></span><span class="p d"></span><span class="p c"></span><span class="p c"></span><span class="p d"></span>
+        <span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p c"></span><span class="p c"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span>
+        <span class="p d"></span><span class="p d"></span><span class="p c"></span><span class="p r"></span><span class="p r"></span><span class="p c"></span><span class="p d"></span><span class="p d"></span>
+        <span class="p d"></span><span class="p c"></span><span class="p r"></span><span class="p r"></span><span class="p r"></span><span class="p r"></span><span class="p c"></span><span class="p d"></span>
+        <span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span><span class="p d"></span>
+      </div>
+
+      <h1 class="error-code">404</h1>
+      <p class="subtitle">Chunk not found</p>
+      <p class="message">
+        Looks like this page was mined out of existence. Let's head back to spawn.
+      </p>
+      <a href="/" class="btn">← Back to Home</a>
+    </div>
+  </body>
+</html>

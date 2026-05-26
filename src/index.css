@@ -1,0 +1,191 @@
+@import '@fontsource/press-start-2p';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body antialiased;
+    @apply bg-pixel-bg-light text-pixel-text-light;
+    @apply dark:bg-pixel-bg-dark dark:text-pixel-text-dark;
+    @apply transition-colors duration-300;
+  }
+
+  /* Skip link */
+  .skip-link {
+    @apply absolute -top-12 left-4 z-50 px-4 py-2;
+    @apply bg-pixel-accent text-white font-pixel text-xs;
+    @apply transition-all duration-200;
+  }
+
+  .skip-link:focus {
+    @apply top-4;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-pixel-border-light dark:bg-pixel-border-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pixel-accent;
+    border: 2px solid transparent;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-pixel-accent-hover;
+  }
+}
+
+@layer components {
+  /* Pixel Button */
+  .pixel-btn {
+    @apply relative inline-flex items-center justify-center;
+    @apply px-6 py-3 font-pixel text-xs;
+    @apply bg-pixel-accent text-white;
+    @apply border-4 border-b-8 border-r-8;
+    @apply border-pixel-accent-hover border-b-[#3A7049] border-r-[#3A7049];
+    @apply shadow-pixel;
+    @apply transition-all duration-150;
+    @apply hover:translate-y-1 hover:border-b-4 hover:border-r-4;
+    @apply active:translate-y-2 active:border-b-2 active:border-r-2;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pixel-accent focus-visible:ring-offset-2;
+    image-rendering: pixelated;
+  }
+
+  .pixel-btn-secondary {
+    @apply pixel-btn;
+    @apply bg-pixel-card-light dark:bg-pixel-card-dark;
+    @apply text-pixel-text-light dark:text-pixel-text-dark;
+    @apply border-pixel-border-light dark:border-pixel-border-dark;
+    @apply border-b-[#B8AD99] border-r-[#B8AD99];
+    @apply dark:border-b-[#3A362E] dark:border-r-[#3A362E];
+  }
+
+  /* Pixel Card */
+  .pixel-card {
+    @apply bg-pixel-card-light dark:bg-pixel-card-dark;
+    @apply border-4 border-pixel-border-light dark:border-pixel-border-dark;
+    @apply shadow-pixel;
+    @apply transition-all duration-200;
+  }
+
+  .pixel-card:hover {
+    @apply shadow-pixel-hover;
+    @apply -translate-y-1;
+  }
+
+  /* Minecraft-style inventory slot */
+  .inventory-slot {
+    @apply relative w-16 h-16;
+    @apply bg-pixel-card-light dark:bg-pixel-card-dark;
+    @apply border-4 border-pixel-border-light dark:border-pixel-border-dark;
+    @apply border-t-[#FFFDF7] border-l-[#FFFDF7];
+    @apply dark:border-t-[#4A453A] dark:border-l-[#4A453A];
+    @apply border-b-[#B8AD99] border-r-[#B8AD99];
+    @apply dark:border-b-[#1A1814] dark:border-r-[#1A1814];
+    @apply shadow-pixel-inset;
+    @apply flex items-center justify-center;
+    @apply transition-all duration-200;
+    image-rendering: pixelated;
+  }
+
+  .inventory-slot:hover {
+    @apply bg-pixel-accent/10;
+    @apply shadow-pixel-glow;
+  }
+
+  /* Pixel input */
+  .pixel-input {
+    @apply w-full px-4 py-3;
+    @apply bg-pixel-card-light dark:bg-pixel-card-dark;
+    @apply border-4 border-pixel-border-light dark:border-pixel-border-dark;
+    @apply border-t-[#B8AD99] border-l-[#B8AD99];
+    @apply dark:border-t-[#1A1814] dark:border-l-[#1A1814];
+    @apply border-b-[#FFFDF7] border-r-[#FFFDF7];
+    @apply dark:border-b-[#4A453A] dark:border-r-[#4A453A];
+    @apply font-body text-pixel-text-light dark:text-pixel-text-dark;
+    @apply placeholder:text-pixel-text-light/40 dark:placeholder:text-pixel-text-dark/40;
+    @apply focus:outline-none focus:ring-2 focus:ring-pixel-accent;
+    @apply transition-all duration-200;
+  }
+
+  /* Section Title */
+  .section-title {
+    @apply font-pixel text-lg md:text-xl;
+    @apply text-pixel-text-light dark:text-pixel-text-dark;
+    @apply mb-8;
+    @apply relative inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 w-full h-1;
+    @apply bg-pixel-accent;
+  }
+
+  /* Text selection */
+  ::selection {
+    @apply bg-pixel-accent text-white;
+  }
+}
+
+@layer utilities {
+  .animate-stagger-1 { animation-delay: 0.1s; }
+  .animate-stagger-2 { animation-delay: 0.2s; }
+  .animate-stagger-3 { animation-delay: 0.3s; }
+  .animate-stagger-4 { animation-delay: 0.4s; }
+  .animate-stagger-5 { animation-delay: 0.5s; }
+
+  .pixel-text-shadow {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Loading screen */
+.loading-screen {
+  @apply fixed inset-0 z-50;
+  @apply bg-pixel-bg-light dark:bg-pixel-bg-dark;
+  @apply flex flex-col items-center justify-center;
+  @apply transition-opacity duration-500;
+}
+
+.loading-bar {
+  @apply w-64 h-4 bg-pixel-border-light dark:bg-pixel-border-dark;
+  @apply border-2 border-pixel-text-light/20 dark:border-pixel-text-dark/20;
+  @apply overflow-hidden;
+}
+
+.loading-bar-fill {
+  @apply h-full bg-pixel-accent;
+  @apply transition-all duration-300;
+}
+
+/* Reduced motion: disable decorative animations, preserve functional transitions */
+@media (prefers-reduced-motion: reduce) {
+  .loading-bar-fill {
+    transition: none;
+  }
+
+  /* Framer Motion respects useReducedMotion hook — additional CSS safety net */
+  @keyframes spin { to { transform: rotate(360deg); } }
+}
+
+/* High contrast focus indicators */
+:focus-visible {
+  outline: 2px solid #4A8C5E;
+  outline-offset: 2px;
+}

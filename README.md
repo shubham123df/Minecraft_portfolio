@@ -206,7 +206,7 @@ ESLint 9 flat config with `react-hooks` and `react-refresh` plugins.
 
 - GitHub: [@shubham123df](https://github.com/shubham123df)
 - LinkedIn: [Shubham Kumar Gupta](https://www.linkedin.com/in/shubham-kumar-gupta-b760b8334/)
-- Email: krishkumargupta7631@gmail.com
+
 
 ---
 
